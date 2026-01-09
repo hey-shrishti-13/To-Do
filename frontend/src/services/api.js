@@ -1,6 +1,13 @@
 import axios from 'axios';
 
+// Get API URL from environment variable or use default
 const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:5000/api';
+
+// Log API URL for debugging (only in development)
+if (process.env.NODE_ENV === 'development') {
+  console.log('API URL:', API_URL);
+  console.log('REACT_APP_API_URL env var:', process.env.REACT_APP_API_URL);
+}
 
 const api = axios.create({
   baseURL: API_URL,

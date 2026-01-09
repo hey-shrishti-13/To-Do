@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { trashAPI } from '../services/api';
 import { format } from 'date-fns';
 import './Trash.css';
@@ -7,11 +7,7 @@ const Trash = () => {
   const [trashItems, setTrashItems] = useState([]);
   const [filter, setFilter] = useState('all'); // all, task, folder
 
-  useEffect(() => {
-    loadTrash();
-  }, [filter]);
-
-  const loadTrash = async () => {
+  const loadTrash = useCallback(async () => {
     try {
       const params = filter !== 'all' ? { type: filter } : {};
       const response = await trashAPI.getAll(params);
@@ -19,7 +15,11 @@ const Trash = () => {
     } catch (error) {
       console.error('Error loading trash:', error);
     }
-  };
+  }, [filter]);
+
+  useEffect(() => {
+    loadTrash();
+  }, [loadTrash]);
 
   const handleRestore = async (id) => {
     try {

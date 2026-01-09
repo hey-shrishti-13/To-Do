@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { foldersAPI, tasksAPI } from '../services/api';
 import { useSearch } from '../components/Layout';
 import FolderCard from '../components/FolderCard';
@@ -22,15 +22,7 @@ const Home = () => {
   const [selectedTask, setSelectedTask] = useState(null);
   const [selectedFolderId, setSelectedFolderId] = useState(null);
 
-  useEffect(() => {
-    loadFolders();
-  }, [sortBy, sortOrder]);
-
-  useEffect(() => {
-    loadTasks();
-  }, [selectedFolderTab, selectedTaskTab, searchQuery, sortBy, sortOrder, selectedFolderId]);
-
-  const loadFolders = async () => {
+  const loadFolders = useCallback(async () => {
     try {
       const response = await foldersAPI.getAll({ sortBy, order: sortOrder });
       setFolders(response.data);
@@ -42,9 +34,9 @@ const Home = () => {
         console.error('No response from server. Is the backend running?');
       }
     }
-  };
+  }, [sortBy, sortOrder]);
 
-  const loadTasks = async () => {
+  const loadTasks = useCallback(async () => {
     try {
       const params = {
         search: searchQuery || undefined,
@@ -62,7 +54,15 @@ const Home = () => {
         console.error('No response from server. Is the backend running?');
       }
     }
-  };
+  }, [searchQuery, sortBy, sortOrder, selectedFolderId]);
+
+  useEffect(() => {
+    loadFolders();
+  }, [loadFolders]);
+
+  useEffect(() => {
+    loadTasks();
+  }, [loadTasks]);
 
   const handleCreateFolder = async (folderData) => {
     try {

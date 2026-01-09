@@ -7,7 +7,14 @@ require('dotenv').config();
 const app = express();
 
 // Middleware
-app.use(cors());
+const corsOptions = {
+  origin: [
+    'http://localhost:3000',
+    'https://meowdo.netlify.app'
+  ],
+  credentials: true
+};
+app.use(cors(corsOptions));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));

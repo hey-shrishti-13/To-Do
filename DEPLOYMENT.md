@@ -146,6 +146,13 @@ app.use(cors());
 **CORS Errors**:
 - Ensure CORS is configured in `backend/server.js`
 - Add your Netlify domain to allowed origins
+- Example: Update `corsOptions.origin` array in `backend/server.js`:
+  ```javascript
+  origin: [
+    'http://localhost:3000',
+    'https://your-netlify-app.netlify.app'
+  ]
+  ```
 
 **MongoDB Connection**:
 - Verify MongoDB Atlas IP whitelist includes `0.0.0.0/0`

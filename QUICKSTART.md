@@ -1,33 +1,7 @@
 # Quick Start Guide
 
-## For Windows Users
+## Quick Setup
 
-### 1. Run Setup Script
-Double-click `setup.bat` or run in command prompt:
-```cmd
-setup.bat
-```
-
-### 2. Configure MongoDB
-1. Edit `backend\.env` file
-2. Add your MongoDB Atlas connection string:
-   ```
-   MONGODB_URI=mongodb+srv://username:password@cluster.mongodb.net/todoapp
-   PORT=5000
-   ```
-
-### 3. Start the App
-```cmd
-npm run dev
-```
-
-The app will open at:
-- Frontend: http://localhost:3000
-- Backend: http://localhost:5000
-
-## Manual Setup (All Platforms)
-
-### 1. Install Dependencies
 ```bash
 npm run install-all
 ```
@@ -42,7 +16,12 @@ cp backend/env.example backend/.env
 ```
 
 ### 3. Configure MongoDB
-Edit `backend/.env` and add your MongoDB connection string.
+1. Edit `backend/.env` file
+2. Add your MongoDB Atlas connection string:
+   ```
+   MONGODB_URI=mongodb+srv://username:password@cluster.mongodb.net/todoapp
+   PORT=5000
+   ```
 
 ### 4. Create Uploads Directory
 ```bash
@@ -53,7 +32,7 @@ mkdir backend\uploads
 mkdir -p backend/uploads
 ```
 
-### 5. Start Development
+### 5. Start the App
 ```bash
 npm run dev
 ```

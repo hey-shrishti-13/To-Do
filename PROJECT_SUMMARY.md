@@ -70,8 +70,7 @@ To-Do/
 ├── README.md
 ├── SETUP.md
 ├── DEPLOYMENT.md
-├── QUICKSTART.md
-└── setup.bat            # Windows setup script
+└── QUICKSTART.md
 ```
 
 ## Technology Stack
@@ -131,7 +130,7 @@ REACT_APP_API_URL=https://your-backend-url.onrender.com/api
 
 ## Getting Started
 
-1. **Quick Setup**: Run `setup.bat` (Windows) or follow `QUICKSTART.md`
+1. **Quick Setup**: Follow `QUICKSTART.md`
 2. **Detailed Setup**: See `SETUP.md`
 3. **Deployment**: See `DEPLOYMENT.md`
 

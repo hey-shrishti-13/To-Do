@@ -74,7 +74,7 @@ Fill in these **exact** settings:
 - **Root Directory**: `backend`
 - **Runtime**: `Node` (make sure it's set to Node, NOT Docker)
 - **Build Command**: `npm install`
-- **Start Command**: `npm start` (or `node server.js`)
+- **Start Command**: `npm start`
 - **Instance Type**: **Free**
 
 **Important**: If Render shows "Docker" as an option, make sure you select **"Node"** instead. Render will auto-detect Node.js from your `package.json`.

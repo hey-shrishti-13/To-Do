@@ -36,6 +36,11 @@ const Home = () => {
       setFolders(response.data);
     } catch (error) {
       console.error('Error loading folders:', error);
+      if (error.response) {
+        console.error('Response error:', error.response.data);
+      } else if (error.request) {
+        console.error('No response from server. Is the backend running?');
+      }
     }
   };
 
@@ -51,17 +56,24 @@ const Home = () => {
       setTasks(response.data);
     } catch (error) {
       console.error('Error loading tasks:', error);
+      if (error.response) {
+        console.error('Response error:', error.response.data);
+      } else if (error.request) {
+        console.error('No response from server. Is the backend running?');
+      }
     }
   };
 
   const handleCreateFolder = async (folderData) => {
     try {
-      await foldersAPI.create(folderData);
-      loadFolders();
+      const response = await foldersAPI.create(folderData);
+      console.log('Folder created successfully:', response.data);
+      await loadFolders();
       setShowFolderModal(false);
     } catch (error) {
       console.error('Error creating folder:', error);
-      alert('Error creating folder');
+      const errorMessage = error.response?.data?.error || error.message || 'Failed to create folder. Please check your connection.';
+      alert(`Error creating folder: ${errorMessage}`);
     }
   };
 

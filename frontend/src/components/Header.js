@@ -1,9 +1,10 @@
 import React from 'react';
-import { useSearch } from './Layout';
+import { useSearch, useTheme } from './Layout';
 import './Header.css';
 
 const Header = () => {
   const { searchQuery, setSearchQuery } = useSearch();
+  const { darkMode, toggleDarkMode } = useTheme();
 
   const handleSearchChange = (e) => {
     setSearchQuery(e.target.value);
@@ -22,11 +23,9 @@ const Header = () => {
           className="search-input"
         />
       </div>
-      <div className="header-user">
-        <span className="user-name">Sayef mahmud</span>
-        <span className="user-icon">👤</span>
-        <span className="menu-icon">☰</span>
-      </div>
+      <button className="dark-mode-toggle" onClick={toggleDarkMode} title={darkMode ? 'Switch to light mode' : 'Switch to dark mode'}>
+        {darkMode ? '☀️' : '🌙'}
+      </button>
     </header>
   );
 };

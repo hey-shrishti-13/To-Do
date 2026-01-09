@@ -24,6 +24,6 @@
 }
 
 .color-option.selected {
-  border-color: #333;
+  border-color: var(--text-primary);
   transform: scale(1.15);
 }

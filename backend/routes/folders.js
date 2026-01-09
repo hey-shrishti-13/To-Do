@@ -35,15 +35,27 @@ router.get('/:id', async (req, res) => {
 router.post('/', async (req, res) => {
   try {
     const { name, label, color } = req.body;
+    
+    // Validation
+    if (!name || name.trim() === '') {
+      return res.status(400).json({ error: 'Folder name is required' });
+    }
+
     const folder = new Folder({
-      name,
-      label: label || '',
+      name: name.trim(),
+      label: label ? label.trim() : '',
       color: color || '#3498db'
     });
+    
     await folder.save();
+    console.log('Folder created:', folder._id);
     res.status(201).json(folder);
   } catch (error) {
-    res.status(400).json({ error: error.message });
+    console.error('Error creating folder:', error);
+    res.status(400).json({ 
+      error: error.message || 'Failed to create folder',
+      details: process.env.NODE_ENV === 'development' ? error.stack : undefined
+    });
   }
 });
 

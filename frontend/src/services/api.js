@@ -9,6 +9,37 @@ const api = axios.create({
   },
 });
 
+// Add request interceptor for debugging
+api.interceptors.request.use(
+  (config) => {
+    console.log('API Request:', config.method?.toUpperCase(), config.url);
+    return config;
+  },
+  (error) => {
+    console.error('API Request Error:', error);
+    return Promise.reject(error);
+  }
+);
+
+// Add response interceptor for error handling
+api.interceptors.response.use(
+  (response) => {
+    return response;
+  },
+  (error) => {
+    console.error('API Error:', error.response?.data || error.message);
+    if (error.response) {
+      // Server responded with error status
+      console.error('Error Status:', error.response.status);
+      console.error('Error Data:', error.response.data);
+    } else if (error.request) {
+      // Request made but no response
+      console.error('No response received. Check if backend is running.');
+    }
+    return Promise.reject(error);
+  }
+);
+
 // Folders API
 export const foldersAPI = {
   getAll: (params) => api.get('/folders', { params }),

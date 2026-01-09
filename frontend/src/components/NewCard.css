@@ -1,6 +1,6 @@
 .new-card {
-  background-color: #ffffff;
-  border: 2px dashed #ddd;
+  background-color: var(--bg-secondary);
+  border: 2px dashed var(--border-color);
   border-radius: 12px;
   padding: 40px 20px;
   cursor: pointer;
@@ -14,8 +14,8 @@
 }
 
 .new-card:hover {
-  border-color: #667eea;
-  background-color: #f8f9ff;
+  border-color: var(--accent);
+  background-color: var(--bg-primary);
 }
 
 .new-card-icon {
@@ -29,12 +29,13 @@
   top: -5px;
   right: -5px;
   font-size: 20px;
-  color: #667eea;
+  color: var(--accent);
   font-weight: bold;
 }
 
 .new-card-label {
   font-size: 14px;
-  color: #999;
+  color: var(--text-secondary);
   font-weight: 500;
+  transition: color 0.3s;
 }

@@ -1,16 +1,16 @@
 .task-card {
-  background-color: #ffffff;
+  background-color: var(--bg-secondary);
   border-radius: 12px;
   padding: 20px;
   cursor: pointer;
-  transition: transform 0.2s, box-shadow 0.2s;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s, box-shadow 0.2s, background-color 0.3s;
+  box-shadow: 0 2px 4px var(--shadow);
   position: relative;
 }
 
 .task-card:hover {
   transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 4px 8px var(--shadow);
 }
 
 .task-card.completed {
@@ -30,7 +30,8 @@
 
 .task-date {
   font-size: 12px;
-  color: #999;
+  color: var(--text-secondary);
+  transition: color 0.3s;
 }
 
 .task-actions {
@@ -41,9 +42,9 @@
 .complete-btn {
   width: 24px;
   height: 24px;
-  border: 2px solid #ddd;
+  border: 2px solid var(--border-color);
   border-radius: 4px;
-  background: white;
+  background: var(--bg-secondary);
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -54,12 +55,12 @@
 }
 
 .complete-btn:hover {
-  border-color: #667eea;
+  border-color: var(--accent);
 }
 
 .complete-btn.checked {
-  background-color: #667eea;
-  border-color: #667eea;
+  background-color: var(--accent);
+  border-color: var(--accent);
 }
 
 .delete-btn {
@@ -77,19 +78,21 @@
 .task-title {
   font-size: 18px;
   font-weight: 600;
-  color: #333;
+  color: var(--text-primary);
   margin-bottom: 8px;
+  transition: color 0.3s;
 }
 
 .task-description {
   font-size: 14px;
-  color: #666;
+  color: var(--text-secondary);
   line-height: 1.5;
   margin-bottom: 12px;
   display: -webkit-box;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
+  transition: color 0.3s;
 }
 
 .task-media {
@@ -115,5 +118,6 @@
 
 .task-time {
   font-size: 12px;
-  color: #999;
+  color: var(--text-secondary);
+  transition: color 0.3s;
 }

@@ -29,6 +29,15 @@ mongoose.connect(MONGODB_URI, {
 .then(() => console.log('MongoDB Connected'))
 .catch(err => console.error('MongoDB connection error:', err));
 
+// Health check endpoint
+app.get('/api/health', (req, res) => {
+  res.json({ 
+    status: 'ok', 
+    message: 'Server is running',
+    timestamp: new Date().toISOString()
+  });
+});
+
 // Routes
 app.use('/api/folders', require('./routes/folders'));
 app.use('/api/tasks', require('./routes/tasks'));

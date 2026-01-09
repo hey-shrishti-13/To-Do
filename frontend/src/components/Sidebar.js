@@ -11,7 +11,7 @@ const Sidebar = () => {
       <div className="sidebar-header">
         <div className="logo">
           <div className="logo-icon">M</div>
-          <span className="logo-text">MINO</span>
+          <span className="logo-text">MEOWDO</span>
         </div>
       </div>
 

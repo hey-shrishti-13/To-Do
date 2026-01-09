@@ -43,15 +43,23 @@ const TaskCard = ({ task, onClick, onComplete, onDelete }) => {
       {task.media && task.media.length > 0 && (
         <div className="task-media">
           {task.media.map((media, index) => {
+            // Get base URL without /api
+            const baseUrl = process.env.REACT_APP_API_URL 
+              ? process.env.REACT_APP_API_URL.replace('/api', '')
+              : 'http://localhost:5000';
             const mediaUrl = media.startsWith('http') 
               ? media 
-              : `${process.env.REACT_APP_API_URL || 'http://localhost:5000'}${media}`;
+              : `${baseUrl}${media}`;
             return (
               <img 
                 key={index} 
                 src={mediaUrl} 
                 alt={`Media ${index + 1}`}
                 className="media-preview"
+                onError={(e) => {
+                  console.error('Failed to load media:', mediaUrl);
+                  e.target.style.display = 'none';
+                }}
               />
             );
           })}

@@ -7,11 +7,13 @@
 .archive-page h1 {
   font-size: 28px;
   font-weight: bold;
-  color: #333;
+  color: var(--text-primary);
   margin-bottom: 20px;
+  transition: color 0.3s;
 }
 
 .archive-page p {
-  color: #666;
+  color: var(--text-secondary);
   font-size: 16px;
+  transition: color 0.3s;
 }

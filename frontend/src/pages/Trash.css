@@ -13,7 +13,8 @@
 .trash-header h1 {
   font-size: 28px;
   font-weight: bold;
-  color: #333;
+  color: var(--text-primary);
+  transition: color 0.3s;
 }
 
 .empty-trash-btn {
@@ -39,28 +40,29 @@
 
 .filter-btn {
   padding: 8px 16px;
-  border: 1px solid #e0e0e0;
-  background-color: white;
-  color: #666;
+  border: 1px solid var(--border-color);
+  background-color: var(--bg-secondary);
+  color: var(--text-secondary);
   border-radius: 6px;
   cursor: pointer;
   transition: all 0.2s;
 }
 
 .filter-btn:hover {
-  background-color: #f5f5f5;
+  background-color: var(--bg-primary);
 }
 
 .filter-btn.active {
-  background-color: #667eea;
+  background-color: var(--accent);
   color: white;
-  border-color: #667eea;
+  border-color: var(--accent);
 }
 
 .empty-trash {
   text-align: center;
   padding: 60px 20px;
-  color: #999;
+  color: var(--text-secondary);
+  transition: color 0.3s;
 }
 
 .trash-items {
@@ -70,13 +72,14 @@
 }
 
 .trash-item {
-  background-color: white;
+  background-color: var(--bg-secondary);
   border-radius: 8px;
   padding: 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 4px var(--shadow);
+  transition: background-color 0.3s;
 }
 
 .trash-item-info {
@@ -85,21 +88,24 @@
 
 .trash-item-type {
   font-size: 12px;
-  color: #999;
+  color: var(--text-secondary);
   text-transform: uppercase;
   margin-bottom: 5px;
+  transition: color 0.3s;
 }
 
 .trash-item-name {
   font-size: 18px;
   font-weight: 500;
-  color: #333;
+  color: var(--text-primary);
   margin-bottom: 5px;
+  transition: color 0.3s;
 }
 
 .trash-item-date {
   font-size: 12px;
-  color: #999;
+  color: var(--text-secondary);
+  transition: color 0.3s;
 }
 
 .trash-item-actions {

@@ -1,0 +1,17 @@
+.archive-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.archive-page h1 {
+  font-size: 28px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.archive-page p {
+  color: #666;
+  font-size: 16px;
+}

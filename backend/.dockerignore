@@ -1,0 +1,5 @@
+# Prevent Docker detection
+node_modules
+.env
+uploads
+*.log

@@ -72,10 +72,12 @@ Fill in these **exact** settings:
 - **Region**: Choose closest to you
 - **Branch**: `main` (or your main branch)
 - **Root Directory**: `backend`
-- **Runtime**: `Node`
+- **Runtime**: `Node` (make sure it's set to Node, NOT Docker)
 - **Build Command**: `npm install`
-- **Start Command**: `node server.js`
+- **Start Command**: `npm start` (or `node server.js`)
 - **Instance Type**: **Free**
+
+**Important**: If Render shows "Docker" as an option, make sure you select **"Node"** instead. Render will auto-detect Node.js from your `package.json`.
 
 ### 2.4 Add Environment Variables
 Click "Advanced" → "Add Environment Variable", add these:

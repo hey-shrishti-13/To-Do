@@ -14,8 +14,9 @@
 2. New → Web Service → Connect GitHub repo
 3. Settings:
    - Root Directory: `backend`
+   - Runtime: **Node** (NOT Docker)
    - Build: `npm install`
-   - Start: `node server.js`
+   - Start: `npm start` (or `node server.js`)
 4. Environment Variables:
    - `MONGODB_URI` = your connection string
    - `PORT` = `10000`

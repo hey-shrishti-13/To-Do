@@ -124,46 +124,6 @@
   font-size: 20px;
 }
 
-.sidebar-footer {
-  padding: 20px;
-  border-top: 1px solid var(--border-color);
-  transition: border-color 0.3s;
-}
-
-.upgrade-box {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  padding: 20px;
-  border-radius: 12px;
-  text-align: center;
-  color: white;
-}
-
-.upgrade-illustration {
-  font-size: 48px;
-  margin-bottom: 10px;
-}
-
-.upgrade-text {
-  font-size: 12px;
-  margin-bottom: 15px;
-  line-height: 1.4;
-}
-
-.upgrade-btn {
-  width: 100%;
-  padding: 10px;
-  background-color: #1a237e;
-  color: white;
-  border: none;
-  border-radius: 6px;
-  font-weight: 500;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-.upgrade-btn:hover {
-  background-color: #283593;
-}
 
 @media (max-width: 768px) {
   .sidebar {

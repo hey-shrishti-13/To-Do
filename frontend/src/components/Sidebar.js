@@ -56,16 +56,6 @@ const Sidebar = () => {
           <span>Trash</span>
         </Link>
       </nav>
-
-      <div className="sidebar-footer">
-        <div className="upgrade-box">
-          <div className="upgrade-illustration">👤</div>
-          <p className="upgrade-text">
-            Want to access unlimited notes taking experience & lots of feature?
-          </p>
-          <button className="upgrade-btn">Upgrade pro</button>
-        </div>
-      </div>
     </aside>
   );
 };

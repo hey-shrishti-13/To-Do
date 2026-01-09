@@ -10,7 +10,6 @@ const Sidebar = () => {
     <aside className="sidebar">
       <div className="sidebar-header">
         <div className="logo">
-          <div className="logo-icon">M</div>
           <span className="logo-text">MEOWDO</span>
         </div>
       </div>

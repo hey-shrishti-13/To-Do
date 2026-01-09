@@ -98,11 +98,17 @@ Click "Advanced" → "Add Environment Variable", add these:
 
 ### 2.5 Deploy
 1. Click "Create Web Service"
-2. Wait 5-10 minutes for first deployment
-3. Watch the logs for:
+2. **Important**: If Render asks about Docker, make sure to select **"Node"** runtime
+3. Wait 5-10 minutes for first deployment
+4. Watch the logs for:
+   - ✅ "Installing dependencies" - npm install running
    - ✅ "MongoDB Connected" - Database connected successfully
    - ✅ "Server running on port 10000" - Server started
    - ❌ Any errors (check MongoDB connection string if errors)
+
+**Note**: If Render tries to use Docker, you can:
+- Make sure "Runtime" is set to "Node" (not "Docker")
+- The `.dockerignore` file in the `backend` folder helps prevent Docker detection
 
 ### 2.6 Get Your Backend URL
 1. After deployment completes, you'll see your service URL
